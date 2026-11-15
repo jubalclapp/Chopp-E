@@ -1,5 +1,5 @@
 # Chopp-E
-MOSFET-Clipping Overdrive Guitar Pedal, derived from the Fulltone OCD
+## MOSFET-Clipping Overdrive Guitar Pedal, derived from the Fulltone OCD
 Chopp-E is a custom guitar overdrive designed for a friend. The process began with the well known OCD circuit as a starting point; each stage was then analyzed by hand and verified in LTspice, and the problems encountered along the way were remedied. The mechanical footswitch was replaced by a microcontroller relay bypass.
 <p align="center"><img src="hardware/overdrive_pedal.png" width="640"></p>
 
