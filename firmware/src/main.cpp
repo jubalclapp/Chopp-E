@@ -1,15 +1,17 @@
 #include <Arduino.h>
-const uint8_t PIN_COIL_ON = PB0;
+const uint8_t PIN_COIL_ON = PB0;      // initialize all needed global variables
 const uint8_t PIN_COIL_OFF = PB1;
 const uint8_t PIN_MUTE = PB2;
 const uint8_t PIN_LED = PB3;
 const uint8_t PIN_FSW = PB4;
 const uint16_t DEBOUNCE_MS = 20;
+const uint16_t MUTE_LEAD_MS = 5;
+const uint16_t COIL_PULSE_MS = 10;
+const uint16_t MUTE_TRAIL_MS = 10;
 bool engaged = false; 
 
 void setup() {
-  // put your setup code here, to run once:
-  digitalWrite(PIN_COIL_ON, LOW);
+  digitalWrite(PIN_COIL_ON, LOW);      // initialize all needed pins
   pinMode(PIN_COIL_ON, OUTPUT);
   digitalWrite(PIN_COIL_OFF, LOW);
   pinMode(PIN_COIL_OFF, OUTPUT);
@@ -20,6 +22,23 @@ void setup() {
   pinMode(PIN_FSW, INPUT);
 
 }
+void setBypass(bool engage) {          // switch relay to requested state
+  digitalWrite(PIN_MUTE, HIGH);
+  delay(MUTE_LEAD_MS);
+  if (engage) {
+    digitalWrite(PIN_COIL_ON, HIGH);
+    delay(COIL_PULSE_MS);
+    digitalWrite(PIN_COIL_ON, LOW);
+  } else {
+    digitalWrite(PIN_COIL_OFF, HIGH);
+    delay(COIL_PULSE_MS);
+    digitalWrite(PIN_COIL_OFF, LOW);
+  }
+  delay(MUTE_TRAIL_MS);
+  digitalWrite(PIN_MUTE, LOW);
+  digitalWrite(PIN_LED, engage ? HIGH : LOW);
+}
+
 void readButton () {
   bool reading = digitalRead(PIN_FSW);
   if (reading == LOW){
@@ -27,7 +46,7 @@ void readButton () {
     reading = digitalRead(PIN_FSW);
     if (reading == LOW){
       engaged = !engaged;
-      digitalWrite(PIN_LED, engaged ? HIGH : LOW);
+      setBypass(engaged);
       while (digitalRead(PIN_FSW) == LOW){
 
       }
