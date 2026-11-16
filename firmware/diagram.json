@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Chopp-E",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-attiny85", "id": "tiny", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "fsw", "top": 150, "left": -120, "attrs": { "color": "black", "label": "Footswitch" } },
+    { "type": "wokwi-led", "id": "coil_on", "top": -110, "left": 150, "attrs": { "color": "green", "label": "SET coil (engage)" } },
+    { "type": "wokwi-led", "id": "coil_off", "top": -110, "left": 210, "attrs": { "color": "red", "label": "RESET coil (bypass)" } },
+    { "type": "wokwi-led", "id": "mute", "top": -110, "left": 270, "attrs": { "color": "yellow", "label": "Mute" } },
+    { "type": "wokwi-led", "id": "status", "top": -110, "left": 330, "attrs": { "color": "blue", "label": "Status LED" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 60, "left": 150, "rotate": 90, "attrs": { "value": "470" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 60, "left": 210, "rotate": 90, "attrs": { "value": "470" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": 60, "left": 270, "rotate": 90, "attrs": { "value": "470" } },
+    { "type": "wokwi-resistor", "id": "r4", "top": 60, "left": 330, "rotate": 90, "attrs": { "value": "470" } },
+    { "type": "wokwi-resistor", "id": "rpu", "top": 120, "left": -60, "attrs": { "value": "10000" } }
+  ],
+  "connections": [
+    [ "tiny:PB0", "coil_on:A", "green", [] ],
+    [ "tiny:PB1", "coil_off:A", "green", [] ],
+    [ "tiny:PB2", "mute:A", "green", [] ],
+    [ "tiny:PB3", "status:A", "green", [] ],
+    [ "coil_on:C", "r1:1", "black", [] ],
+    [ "coil_off:C", "r2:1", "black", [] ],
+    [ "mute:C", "r3:1", "black", [] ],
+    [ "status:C", "r4:1", "black", [] ],
+    [ "r1:2", "tiny:GND", "black", [] ],
+    [ "r2:2", "tiny:GND", "black", [] ],
+    [ "r3:2", "tiny:GND", "black", [] ],
+    [ "r4:2", "tiny:GND", "black", [] ],
+    [ "tiny:PB4", "fsw:1.l", "blue", [] ],
+    [ "fsw:2.l", "tiny:GND", "black", [] ],
+    [ "tiny:PB4", "rpu:2", "blue", [] ],
+    [ "rpu:1", "tiny:VCC", "red", [] ]
+  ],
+  "dependencies": {}
+}
