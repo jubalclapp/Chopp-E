@@ -19,5 +19,12 @@ Chopp-E is a custom guitar overdrive designed for a friend. The process began wi
 ## Repo Layout
 hardware/     KiCad project files
 firmware/     ATtiny85 bypass coltroller (PlatformIO)
+## Status 
+- [x] Hand analysis <br>
+- [x] Schematic, ERC clean<br>
+- [x] Simulation on LTspice<br>
+- [x] PCB Layout, DRC clean<br>
+- [x] Firmwaare: debounced input, muted relay switching, EEPROM state memory, inturrupt driven sleep mode (validated in simulation)<br>
+- [] Build & test
 ***
 *Jubal Clapp | Electrical Engineering @ Queen's University | Fall 2026*
