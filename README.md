@@ -14,7 +14,7 @@ Chopp-E is a custom guitar overdrive designed for a friend. The process began wi
 | PCB| two layer, solid ground plane, SMD fixed parts, socketed tone shaping parts |
 ## Changes from reference
 1. Input buffer. Removed JFET's drain resistor, ensuring it remains saturated across the full $I_{DSS}$ range listed on the datasheet
-2. Output buffer. Converted the collector output stage to an emtiier-follower, tripling headroom (0.9$\pm$V to 2.6$\pm$) and cutting input impedence from 10k $\omega$ to 230 $\omega$
+2. Output buffer. Converted the collector output stage to an emtiier-follower, tripling headroom (0.9$\pm$V to 2.6$\pm$) and cutting input impedence from 10k $\Omega$ to 230 $\Omega$
 3. Relay bypass. An ATtiny85 drives a latching relay and mutes the output while switching.
 ## Repo Layout
 hardware/     KiCad project files
