@@ -7,10 +7,10 @@ The following are some assembly recommendations, aligning with the intended desi
 ## BOM table
 | Ref | Component Value | Package | Qty |
 | --- | --------------- | ------- | --- |
-| R10 | 39k$\Omega$ | Axial, 7.62mm | 1 |
-| R11 | 22k$\Omega$ | Axial, 7.62mm | 1 |
-| R12 | 33k$\Omega$ | Axial, 7.62mm | 1 |
-| R21 | 2.2k$\Omega$ | Axial, 7.62mm | 1 |
+| R10 | 39k&Omega;| Axial, 7.62mm | 1 |
+| R11 | 22k&Omega; | Axial, 7.62mm | 1 |
+| R12 | 33k&Omega; | Axial, 7.62mm | 1 |
+| R21 | 2.2k&Omega; | Axial, 7.62mm | 1 |
 | C3 | 220pF, C0G ceramic | Radial, 5mm | 1 |
 | C6 | 47nF, film | Radial, 5mm | 1 |
 | C10 | 220pF, C0G ceramic  | Radial, 5mm | 1 |
@@ -28,9 +28,9 @@ The following are some assembly recommendations, aligning with the intended desi
 | D4 | 1N5817 Schottky diode | DO-41 | 1 |
 | D3 | LED, 3mm | THT | 1 |
 | K1 | Omron G6SK-2 DC5 latching relay | THT | 1 |
-| C9, C15 | 10$\mu$F, 25V electrolytic | Radial | 2 |
-| C12 | 220$\mu$F, 25V electrolytic | Radial | 1 |
-| C13 | 47$\mu$F, 25V electrolytic | Radial | 1 |
+| C9, C15 | 10&micro:F, 25V electrolytic | Radial | 2 |
+| C12 | 220 &micro;F, 25V electrolytic | Radial | 1 |
+| C13 | 47&micro;F, 25V electrolytic | Radial | 1 |
 | J1, J2 | 1/4 inch mono jack enclosure mount | Panel | 2 |
 | J4 | 2.1 mm DC jack | Panel | 1 |
 | RV1 | B10K potentiometer, 16mm | Panel | 1 |
